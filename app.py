@@ -1,5 +1,5 @@
-# Hugging Face Spaces - Simple Version (No Qiskit dependency)
-from quantum_simple import app
+# Hugging Face Spaces - REAL QUANTUM VERSION
+from quantum_terminal_demo import app
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=7860, debug=True)
