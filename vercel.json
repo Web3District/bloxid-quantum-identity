@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "quantum_terminal_demo.py",
+      "src": "quantum_simple.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "quantum_terminal_demo.py"
+      "dest": "quantum_simple.py"
     }
   ]
 }
