@@ -2,20 +2,19 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Install system dependencies for Qiskit
+# Install system dependencies
 RUN apt-get update && apt-get install -y build-essential && rm -rf /var/lib/apt/lists/*
 
-# Install Python dependencies (includes Qiskit - this takes time!)
+# Install Python dependencies (lightweight - no Qiskit for now)
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy ALL application files
-COPY quantum_terminal_demo.py .
-COPY quantum_lattice_core.py .
+# Copy working application
+COPY quantum_simple.py .
 COPY app.py .
 
 # Expose port
 EXPOSE 7860
 
-# Run the REAL quantum app
+# Run the app
 CMD ["python", "app.py"]
